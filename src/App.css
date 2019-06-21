@@ -31,3 +31,46 @@
     transform: rotate(360deg);
   }
 }
+
+/*menu*/
+.MenuContainer
+{
+  margin: auto;
+  width: 100%;
+  background: #253746;
+  height: 40px;
+  border-radius: 0px;
+  padding-bottom: 15px;
+  text-decoration: none;
+}
+
+.itemMenu 
+{
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background: #253746;
+  width:16%;
+  height:100%;
+  color:#62E52C;
+  border-radius: 0px;
+  /*margin-top:1%;*/
+}
+
+.itemMenu :hover
+{
+  color :white;
+  border-bottom:6px solid #35CD40;
+  
+  
+
+}
+
+
+.itemMenu p
+{
+  margin: auto;
+  padding: 6% 0%; 
+}
+
+/**/
