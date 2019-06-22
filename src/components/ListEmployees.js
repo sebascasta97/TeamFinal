@@ -1,5 +1,8 @@
 import React,{ Component} from 'react';
 import { BASE_LOCAL_ENDPOINT } from '../constants';
+import Employee from './Employee';
+import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 class ListEmployees extends Component
 {
@@ -54,7 +57,7 @@ class ListEmployees extends Component
                     {content.map(({ id, image, name,points }) => (
                         <Link key={id} to={`/employees/${id}`}>
 
-                        <Detail  key={id} imgSrc={image} name={name} points={points}/>
+                        <Employee  key={id} imgSrc={image} name={name} points={points}/>
                         </Link>
                     ))}
                 </>

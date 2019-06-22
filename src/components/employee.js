@@ -14,3 +14,4 @@ function Employee({  imgSrc, name,points})
         </>
     );
 }
+export default Employee;
