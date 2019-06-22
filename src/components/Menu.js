@@ -9,33 +9,33 @@ function Menu()
              <ul className="MenuContainer">
                    <Link to={'/'}>
                     <li  className="itemMenu" >
-                        <p>Team Int</p>
+                        <a>Team Int</a>
                     </li >
                     </Link> 
                     <Link to={'/employees'}>
                     <li   className="itemMenu">
-                        <p>Employees</p>
+                        <a  className=" employees">Employees</a>
                     </li >
                     </Link>
                     <Link to={'/prizes'}>
                     <li  className="itemMenu">
-                        <p>Prizes</p>
+                        <a>Prizes</a>
                     </li >
                     </Link>
 
                     <Link to={'/achievements'}>
                     <li   className="itemMenu">
-                        <p>archivements</p>
+                        <a>Archivements</a>
                     </li >
                     </Link>
                     <Link to={'/employees'}>
                     <li   className="itemMenu">
-                        <p>Profile</p>
+                        <a>Profile</a>
                     </li >
                     </Link>
                     <Link to={'/employees'}>
                     <li   className="itemMenu">
-                        <p>Logout</p>
+                        <a>Logout</a>
                     </li >
                     </Link>
                    

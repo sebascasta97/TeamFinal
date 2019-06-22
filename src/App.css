@@ -57,26 +57,41 @@
   
 }
 
-.itemMenu :hover
+.employees
 {
   color :white;
+
+
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-bottom: 50px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color:#62E52C;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+li a:hover {
+  color :white;
   border-bottom:6px solid #35CD40;
- 
-  
-  
-
 }
 
 
-.itemMenu p
-{
-  margin: auto;
-  padding: 6% 0%; 
-}
-
-.itemMenu p :hover
-{
-  margin-bottom:50px;
-}
 
 /**/
