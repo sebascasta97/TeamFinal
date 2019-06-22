@@ -10,9 +10,9 @@ import './App.css';
 function App() {
   return (
     <>
-    
+    <HashRouter><Menu/></HashRouter>
     <HashRouter>
-      <Menu/>
+      
       <Switch>
         <Route exact path="/" render={ () => (<Redirect to="/employees" />) }   />
         <Route exact path="/employees" component={ListEmployees} />

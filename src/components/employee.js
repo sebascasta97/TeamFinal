@@ -4,11 +4,11 @@ function Employee({  imgSrc, name,points})
 {
     return(
         <>
-            <div>
+            <div className="Container-Employee">
                 <h1>{name}</h1>
                 <img src={imgSrc} alt=""></img>
                 <strong>{points}</strong>
-                <label>*</label>
+                <label>Estrellas</label>
             </div>
             
         </>

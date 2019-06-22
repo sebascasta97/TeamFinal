@@ -57,10 +57,10 @@ class ListEmployees extends Component
     return (
                 <>  
                 <input name="txtSearchEmployee" placeholder="buscar empleado"/>
-                    {content.map(({ id, image, name,points }) => (
+                    {content.map(({ id, imgSrc, name,points }) => (
                         <Link key={id} to={`/employees/${id}`}>
 
-                        <Employee  key={id} imgSrc={image} name={name} points={points}/>
+                        <Employee  key={id} imgSrc={imgSrc} name={name} points={points}/>
                         </Link>
                     ))}
                 </>
