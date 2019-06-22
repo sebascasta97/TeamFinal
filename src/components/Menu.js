@@ -1,5 +1,6 @@
-         import  React from 'react';
+import  React from 'react';
 import {Link} from 'react-router-dom';
+import Logo from '../img/Logo.png';
 
 function Menu()
 {
@@ -9,33 +10,33 @@ function Menu()
              <ul className="MenuContainer">
                    <Link to={'/'}>
                     <li  className="itemMenu" >
-                        <a>Team Int</a>
+                        <span className="spanPad"><img id="imgLogo" src={Logo} height="50" width="60"/></span>
                     </li >
                     </Link> 
                     <Link to={'/employees'}>
                     <li   className="itemMenu">
-                        <a  className=" employees">Employees</a>
+                    <span>Employees</span>
                     </li >
                     </Link>
                     <Link to={'/prizes'}>
                     <li  className="itemMenu">
-                        <a>Prizes</a>
+                        <span>Prizes</span>
                     </li >
                     </Link>
 
                     <Link to={'/achievements'}>
                     <li   className="itemMenu">
-                        <a>Archivements</a>
+                        <span>Achivements</span>
                     </li >
                     </Link>
                     <Link to={'/employees'}>
-                    <li   className="itemMenu">
-                        <a>Profile</a>
+                    <li   className="itemMenu navRight">
+                        <span>Profile</span>
                     </li >
                     </Link>
                     <Link to={'/employees'}>
-                    <li   className="itemMenu">
-                        <a>Logout</a>
+                    <li   className="itemMenu navRight">
+                        <span>Logout</span>
                     </li >
                     </Link>
                    
