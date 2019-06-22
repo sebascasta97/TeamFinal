@@ -1,6 +1,6 @@
-import React,{ Component} from 'react';
+import React ,{ Component} from 'react';
 import { BASE_LOCAL_ENDPOINT } from '../constants';
-import Employee from './Employee';
+import Employee from './employee';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
@@ -50,6 +50,9 @@ class ListEmployees extends Component
         employees: { content, error }
     } = this.state;
 
+    if (error) {
+        return <div>No se pudo conectar con el servidor: {error}</div>
+    }
 
     return (
                 <>  

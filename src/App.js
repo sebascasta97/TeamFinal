@@ -10,12 +10,13 @@ import './App.css';
 function App() {
   return (
     <>
-    <Menu/>
+    
     <HashRouter>
+      <Menu/>
       <Switch>
         <Route exact path="/" render={ () => (<Redirect to="/employees" />) }   />
-        <Route exact path="/employees" component={Menu} />
-        <Route exact path="/employees/:id" component={ListEmployees} />
+        <Route exact path="/employees" component={ListEmployees} />
+        <Route exact path="/employees/:id" component={Menu} />
         <Route exact path="/prizes" component={Menu} />
         <Route exact path="/prizes/:id" component={Menu} />
         <Route exact path="/achievements" component={Menu} />
