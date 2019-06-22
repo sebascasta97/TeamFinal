@@ -4,27 +4,27 @@ import  React from 'react';
 function Menu()
 {
         return(
-            <div>
-                    <div  className="itemMenu">
+             <ul className="MenuContainer">
+                    <li  className="itemMenu">
                         <p>Team Int</p>
-                    </div>
-                    <div  className="itemMenu">
+                    </li >
+                    <li   className="itemMenu">
                         <p>Employees</p>
-                    </div>
-                    <div  className="itemMenu">
+                    </li >
+                    <li  className="itemMenu">
                         <p>Prizes</p>
-                    </div>
-                    <div  className="itemMenu">
+                    </li >
+                    <li   className="itemMenu">
                         <p>archivements</p>
-                    </div>
-                    <div  className="itemMenu">
+                    </li >
+                    <li   className="itemMenu">
                         <p>Profile</p>
-                    </div>
-                    <div  className="itemMenu">
+                    </li >
+                    <li   className="itemMenu">
                         <p>Logout</p>
-                    </div>
+                    </li >
                    
-            </div>
+            </ul>
             
 
                

@@ -21,7 +21,7 @@ function App() {
         <Route component={NotFound} />
       </Switch>
       </HashRouter>
-
+{/* 
     <ul className="MenuContainer">
                     <li  className="itemMenu">
                         <p>Team Int</p>
@@ -43,6 +43,7 @@ function App() {
                     </li >
                    
             </ul>
+            */}
     </>
   );
 }
