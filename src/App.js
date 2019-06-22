@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter,BrowserRouter,Switch,Redirect} from 'react-router-dom';
+import {HashRouter,Route,Switch,Redirect} from 'react-router-dom';
 import Menu from './components/Menu';
 import NotFound from './components/NotFound';
 import './App.css';
@@ -9,24 +9,18 @@ import './App.css';
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
-        <HashRouter
-            exact
-            path="/"
-            render={() => (
-                <Redirect to="/employees" />
-            )}
-        />
-        <HashRouter exact path="/employees" component={Menu} />
-        <HashRouter exact path="/employees/id" component={Menu} />
-        <HashRouter exact path="/prizes" component={Menu} />
-        <HashRouter exact path="/prizes/id" component={Menu} />
-        <HashRouter exact path="/achievements" component={Menu} />
-
-        <HashRouter component={NotFound} />
+        <Route exact path="/" render={ () => (<Redirect to="/employees" />) }   />
+        <Route exact path="/employees" component={Menu} />
+        <Route exact path="/employees/id" component={Menu} />
+        <Route exact path="/prizes" component={Menu} />
+        <Route exact path="/prizes/id" component={Menu} />
+        <Route exact path="/achievements" component={Menu} />
+       {/*en caso de que no se encuentre la ruta*/}
+        <Route component={NotFound} />
       </Switch>
-    </BrowserRouter>
+      </HashRouter>
 
     <ul className="MenuContainer">
                     <li  className="itemMenu">
