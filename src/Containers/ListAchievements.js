@@ -26,7 +26,7 @@ class ListAchievement extends Component
 
    getAchievements= ()=>
    {
-    axios.get(`${BASE_LOCAL_ENDPOINT}/Achievements`)
+    axios.get(`${BASE_LOCAL_ENDPOINT}/achievements`)
     .then(information => {
         this.setState({
             achievements: {
@@ -50,10 +50,14 @@ class ListAchievement extends Component
         achievements: { content, error }
     } = this.state;
 
-
+    if (error) {
+        
+        return <div>No se pudo conectar con el servidor: {error}</div>
+    }
 
     return (
                 <>  
+                {console.log(error)}
                 <input name="SearchAchievement" placeholder="Search Achievement"/>
                     {content.map(({ id,name,points }) => (
                         <Achievement  key={id}  name={name} points={points}/>                     
