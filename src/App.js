@@ -13,9 +13,9 @@ function App() {
       <Switch>
         <Route exact path="/" render={ () => (<Redirect to="/employees" />) }   />
         <Route exact path="/employees" component={Menu} />
-        <Route exact path="/employees/id" component={Menu} />
+        <Route exact path="/employees/:id" component={Menu} />
         <Route exact path="/prizes" component={Menu} />
-        <Route exact path="/prizes/id" component={Menu} />
+        <Route exact path="/prizes/:id" component={Menu} />
         <Route exact path="/achievements" component={Menu} />
        {/*en caso de que no se encuentre la ruta*/}
         <Route component={NotFound} />
