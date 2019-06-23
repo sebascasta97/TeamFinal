@@ -4,6 +4,7 @@ import Menu from './components/Menu';
 import NotFound from './components/NotFound';
 import ListEmployees from './Containers/ListEmployees';
 import ListAchievement from './Containers/ListAchievements';
+import ListPrizes from './Containers/ListPrizes';
 import './App.css';
 
 
@@ -18,7 +19,7 @@ function App() {
         <Route exact path="/" render={ () => (<Redirect to="/employees" />) }   />
         <Route exact path="/employees" component={ListEmployees} />
         <Route exact path="/employees/:id" component={ListEmployees} />
-        <Route exact path="/prizes" component={Menu} />
+        <Route exact path="/prizes" component={ListPrizes} />
         <Route exact path="/prizes/:id" component={Menu} />
         <Route exact path="/achievements" component={ListAchievement} />
        {/*en caso de que no se encuentre la ruta*/}
