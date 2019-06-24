@@ -50,7 +50,9 @@ class ListEmployees extends Component
         employees: { content, error }
     } = this.state;
 
-    
+    if (error!=="") {
+        return <div>No se pudo conectar con el servidor: {error}</div>
+    }
     return (
                 <>  
                 <input name="txtSearchEmployee" placeholder="buscar empleado"/>
