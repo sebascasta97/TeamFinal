@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Prize({name,imgSrc,points,description})
+function Prize({name,imgSrc,points})
 {
  return(
     <>
@@ -9,7 +9,7 @@ function Prize({name,imgSrc,points,description})
             <h1>{name}</h1>
             <img src={imgSrc}/>
             <strong>{points} estrellas</strong>
-            <p>{description}</p>
+            
         </div>
     </>
  );

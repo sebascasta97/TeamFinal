@@ -101,7 +101,7 @@ class ListPrizes extends Component
                     {filteredPrizes.map(({ id, imgSrc, name,points,description }) => (
                         <Link key={id} to={`/prizes/${id}`}>
 
-                        <Prize  key={id} imgSrc={imgSrc} name={name} points={points} description={description}/>
+                        <Prize  key={id} imgSrc={imgSrc} name={name} points={points}/>
                         </Link>
                     ))}
                 </>

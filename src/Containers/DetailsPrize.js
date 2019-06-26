@@ -1,6 +1,8 @@
 import React,{ Component} from 'react';
 import {BASE_LOCAL_ENDPOINT} from '../constants';
-import Axios from 'axios';
+import axios from 'axios';
+import {Link,Redirect} from 'react-router-dom';
+
 
 class DetailsPrize extends Component
 {
@@ -26,7 +28,7 @@ class DetailsPrize extends Component
     {
         
         const {match:{params: {id}}}=this.props;
-        Axios.get(`${BASE_LOCAL_ENDPOINT}/prizes/${id}`)
+        axios.get(`${BASE_LOCAL_ENDPOINT}/prizes/${id}`)
         .then(information =>
             {
                 this.setState({
@@ -43,6 +45,25 @@ class DetailsPrize extends Component
             })
     }
 
+    changePrize=(prize)=>
+    {
+        const changePrize=
+        {
+                "name": prize.name,
+                "description": prize.description,
+                "points": prize.points,
+                "imgUrl": prize.imgSrc
+        }
+        axios.delete(`${BASE_LOCAL_ENDPOINT}/prizes/${prize.id}`,changePrize)
+    }
+
+    deletePrize=(id)=>
+    {
+        axios.delete(`${BASE_LOCAL_ENDPOINT}/prizes/${id}`);
+        
+       
+    }
+
     render()
     {
         const{
@@ -51,7 +72,7 @@ class DetailsPrize extends Component
         }=this.state;
         if(error!=="")
         {
-            return <div className="containError">No se pudo conectar con el servidor: {error}</div>
+            return <div  className="containError">No se pudo conectar con el servidor: {error}</div>
         }
         return(
             <>
@@ -59,6 +80,8 @@ class DetailsPrize extends Component
                 <img src={prize.imgSrc}/>
                 <p>Description: {prize.description}</p>
                 <h5>points: {prize.points}</h5>
+
+                <button onClick={()=>this.deletePrize(prize.id)}>Delete</button>
             </>
         )
     }

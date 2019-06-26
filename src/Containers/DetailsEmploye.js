@@ -47,6 +47,12 @@ class DetailEmploye extends Component
     
 
     }
+
+    deteleEmploye=(id)=>
+    {
+        
+        //axios.delete()
+    }
 render()
     {
         const {
@@ -67,6 +73,7 @@ render()
                  <h5>Work Area: {employe.area}</h5>
                  <h5>Estrellas:{employe.points}</h5>
                  
+                 <button onClick={this.deteleEmploye(employe)}>Delete</button>
             </>
 
         )

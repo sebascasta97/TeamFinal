@@ -123,13 +123,6 @@
   ],
   "prizes": [
     {
-      "id": 1,
-      "name": "Play Station game",
-      "points": 1,
-      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/steam.png",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto voluptas earum maiores quisquam ipsum"
-    },
-    {
       "id": 2,
       "name": "Spa day",
       "points": 1,
@@ -163,20 +156,6 @@
       "points": 8,
       "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/phone.png",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto voluptas earum maiores quisquam ipsum"
-    },
-    {
-      "id": 7,
-      "name": "Watch",
-      "points": 8,
-      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/watch.png",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto voluptas earum maiores quisquam ipsum"
-    },
-    {
-      "name": "play 2",
-      "description": "es un play 2",
-      "points": "40",
-      "imgUrl": "noDisponible",
-      "id": 8
     }
   ],
   "achievements": [
