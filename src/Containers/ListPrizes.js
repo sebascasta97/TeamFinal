@@ -14,7 +14,9 @@ class ListPrizes extends Component
             prizes: {
                 content: [],
                 error: false
-            }
+            },
+            filterPrize:""
+
         }
    }
 
@@ -23,6 +25,28 @@ class ListPrizes extends Component
         this.getprizes();
    }
 
+   searchPrizes=(e)=>
+   {
+       const filtertext=e.target.value;
+       console.log(filtertext);
+       this.setState({ "[filterPrize]": filtertext })
+    
+   }
+   PostPrize= (e)=>
+   {
+       e.preventDefault();
+       console.log("el valor es");
+       console.log(e.target.children);
+      const datos=
+      {
+        "name": e.target.children[0].value,
+		"description":  e.target.children[1].value,
+		"points":  e.target.children[2].value,
+		"imgUrl":  e.target.children[3].value
+      }
+       
+       axios.post(`${BASE_LOCAL_ENDPOINT}/prizes`,datos);
+   }
 
    getprizes= ()=>
    {
@@ -47,17 +71,34 @@ class ListPrizes extends Component
 
    render() { 
     const {
-        prizes: { content, error }
+        prizes: { content, error},
+        filterPrize
     } = this.state;
+    const filteredPrizes = content.filter(prize =>{
+        if(prize.name.includes(filterPrize)===true)
+        {
+            console.log("si cumple")
+            return prize;
+        }});
+        
+    console.log(filteredPrizes);
 
-    if (error) {
+    if (error!=="") {
         return <div>No se pudo conectar con el servidor, por favor intentelo nuevamente: {error}</div>
     }
 
     return (
-                <>  
-                <input name="txtSearchPrize" placeholder="Search a Prize"/>
-                    {content.map(({ id, imgSrc, name,points,description }) => (
+                <>
+                <form  onSubmit={(e)=>this.PostPrize(e)}>
+                        <input type="text"  placeholder="name"/>
+                        <input type="text" placeholder="Descripcion"/>
+                        <input type="number" placeholder="points"/>
+                        <input type="text"  placeholder="url-img"/>
+                        <button  type="submit">Add</button>
+                        
+                </form>  
+                <input name="txtSearchPrize" placeholder="Search a Prize" onChange={(e) => this.searchPrizes(e)}/>
+                    {filteredPrizes.map(({ id, imgSrc, name,points,description }) => (
                         <Link key={id} to={`/prizes/${id}`}>
 
                         <Prize  key={id} imgSrc={imgSrc} name={name} points={points} description={description}/>

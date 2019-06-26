@@ -50,7 +50,7 @@ class ListAchievement extends Component
         achievements: { content, error }
     } = this.state;
 
-    if (error) {
+    if (error!=="") {
         
         return <div>No se pudo conectar con el servidor: {error}</div>
     }
