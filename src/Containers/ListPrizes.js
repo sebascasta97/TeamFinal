@@ -78,12 +78,9 @@ class ListPrizes extends Component
         prizes: { content, error},
         filterPrize
     } = this.state;
-    const filteredPrizes = content.filter(prize =>{
-        if(prize.name.includes(filterPrize)===true)
-        {
-            console.log("si cumple")
-            return prize;
-        }});
+    const filteredPrizes =content.filter(prizes => prizes.name.includes(filterPrize));
+
+   
         
     console.log(filteredPrizes);
 
