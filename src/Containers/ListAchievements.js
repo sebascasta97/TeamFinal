@@ -98,10 +98,10 @@ class ListAchievement extends Component
                 {console.log(error)}
                 <input name="SearchAchievement" placeholder="Search Achievement"/>
                     {content.map(({ id,name,points }) => (
-                        <div>   
-                            <Achievement  key={id}  name={name} points={points}/>  
+                        <div key={id}>   
+                            <Achievement name={name} points={points}/>  
                             <button onClick={()=>this.deleteAchievement(id)}>Delete</button>
-                            <button>Modificar</button>
+                            <button>Change</button>
                             <form  onSubmit={(e)=>this.changeAchievement(e,id)}>
                                 <label>Name:</label>
                                 <input placeholder="Name" defaultValue={name}></input>

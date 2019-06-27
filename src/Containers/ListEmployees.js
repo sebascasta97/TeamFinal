@@ -41,9 +41,13 @@ class ListEmployees extends Component
    {
     axios.get(`${BASE_LOCAL_ENDPOINT}/employees`)
     .then(information => {
+        const arrayEmployee=information.data.sort(function(previous,next)
+        {
+            return next.points-previous.points;
+        })
         this.setState({
             employees: {
-                content: information.data,
+                content: arrayEmployee,
                 error: ''
             },
             createEmployeesError: false
@@ -83,6 +87,7 @@ class ListEmployees extends Component
                         <Employee  key={id} imgSrc={imgSrc} name={name} points={points}/>
                         </Link>
                     ))}
+                    
                 </>
             );
     }

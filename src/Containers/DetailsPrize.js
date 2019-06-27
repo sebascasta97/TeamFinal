@@ -1,7 +1,7 @@
 import React,{ Component} from 'react';
 import {BASE_LOCAL_ENDPOINT} from '../constants';
 import axios from 'axios';
-import {Link,Redirect} from 'react-router-dom';
+//import {Link,Redirect} from 'react-router-dom';
 
 
 class DetailsPrize extends Component
@@ -84,7 +84,7 @@ class DetailsPrize extends Component
         return(
             <>
                 <h1>name:{prize.name}</h1>
-                <img src={""+prize.imgSrc}/>
+                <img src={""+prize.imgSrc} alt="Img Prize"/>
                 <p>Description: {""+prize.description}</p>
                 <h5>points: {""+prize.points}</h5>
 
@@ -93,7 +93,7 @@ class DetailsPrize extends Component
                     <label>Name:</label>
                     <input defaultValue={prize.name}/>
                     <label>Url-img:</label>
-                    <input defaultValue={prize.imgUrl}/>
+                    <input defaultValue={prize.imgSrc}/>
                     <label>Description:</label>
                     <input defaultValue={prize.description}/>
                     <label>Points:</label>

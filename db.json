@@ -124,24 +124,24 @@
   "prizes": [
     {
       "name": "Spa day",
-      "imgUrl": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/spa.png",
+      "imgUrl": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/hotel.png",
       "description": "asfasfsafdg",
       "points": "12",
       "id": 2
     },
     {
-      "id": 3,
-      "name": "Earbugs",
-      "points": 3,
-      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/earbugs.png",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto voluptas earum maiores quisquam ipsum"
+      "name": "Earbug",
+      "imgUrl": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/earbugs.png",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto voluptas earum maiores quisquam ipsum",
+      "points": "3",
+      "id": 3
     },
     {
-      "id": 4,
       "name": "Hotel night",
-      "points": 3,
-      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/hotel.png",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto voluptas earum maiores quisquam ipsum"
+      "imgUrl": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/hotel.png",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto voluptas earum maiores quisquam ipsum",
+      "points": "3",
+      "id": 4
     },
     {
       "id": 5,
@@ -159,9 +159,9 @@
     },
     {
       "name": "League of Legends",
-      "description": "No-Disponible.jpg",
-      "imgUrl": "213",
-      "points": "zsfasgf",
+      "imgUrl": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/hotel.png",
+      "description": "Un juego",
+      "points": "150",
       "id": 7
     },
     {
@@ -174,8 +174,8 @@
   ],
   "achievements": [
     {
-      "name": "Teamniversary (1)",
-      "points": "10",
+      "name": "Teamniversary (5)",
+      "points": "125",
       "id": 3
     },
     {

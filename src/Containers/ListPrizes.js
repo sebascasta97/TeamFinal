@@ -52,9 +52,13 @@ class ListPrizes extends Component
    {
     axios.get(`${BASE_LOCAL_ENDPOINT}/prizes`)
     .then(information => {
+        const arrayPrizes=information.data.sort(function(previous,next)
+        {
+            return previous.points-next.points;
+        })
         this.setState({
             prizes: {
-                content: information.data,
+                content: arrayPrizes,
                 error: ''
             },
             createprizesError: false

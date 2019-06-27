@@ -6,7 +6,7 @@ function Employee({  imgSrc, name,points})
         <>
             <div>
                 <h1>{name}</h1>
-                <img src={imgSrc} alt=""></img>
+                <img src={imgSrc} alt="Img Employe"></img>
                 <strong>{points}</strong>
                 <label>*</label>
             </div>
