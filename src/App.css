@@ -59,6 +59,24 @@
   border-radius: 0px;
   
 }
+.itemMenuLogo
+{
+  font-family: 'Open Sans', sans-serif;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background: #253746;
+  width:13%;
+  height:100%;
+  border-radius: 0px;
+  position: relative;
+  height:50px;
+  width:60px;
+  background: url(img/logo.PNG) no-repeat;
+
+}
+
+
 
 .employees
 {
@@ -68,6 +86,11 @@
 
 }
 
+.itemMenuLogo:hover
+{
+  background: url(img/logoh.png) no-repeat;
+  border-bottom:6px solid #61e42c;
+}
 
 .spanPad
 {
@@ -78,19 +101,9 @@
   width: 11%;
 }
 
-#imgLogo
-{
-  position: relative;
-  
-  background: url(/img/Logo.png);
-  padding:3px 40px;
-}
 
-#imgLogo:hover
-{
-  background: url(/img/LogoHover.png);
-  background-color: #35CD40;
-}
+
+
 
 
 ul {

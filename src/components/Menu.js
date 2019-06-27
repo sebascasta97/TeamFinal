@@ -9,8 +9,8 @@ function Menu()
             {
              <ul className="MenuContainer">
                    <Link to={'/'}>
-                    <li  className="itemMenu" >
-                        <span className="spanPad"><img id="imgLogo" src={Logo} height="50" width="60"/></span>
+                    <li  className="itemMenuLogo">      
+                        
                     </li >
                     </Link> 
                     <Link to={'/employees'}>
