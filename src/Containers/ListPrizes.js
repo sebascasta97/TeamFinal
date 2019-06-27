@@ -98,7 +98,7 @@ class ListPrizes extends Component
                         
                 </form>  
                 <input name="txtSearchPrize" placeholder="Search a Prize" onChange={(e) => this.searchPrizes(e)}/>
-                    {filteredPrizes.map(({ id, imgSrc, name,points,description }) => (
+                    {filteredPrizes.map(({ id, imgSrc, name,points}) => (
                         <Link key={id} to={`/prizes/${id}`}>
 
                         <Prize  key={id} imgSrc={imgSrc} name={name} points={points}/>

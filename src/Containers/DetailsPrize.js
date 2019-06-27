@@ -45,16 +45,24 @@ class DetailsPrize extends Component
             })
     }
 
-    changePrize=(prize)=>
+    changePrize=(e,id)=>
     {
+        const datos=e.target.children;
+        console.log(e.target.children);
+        console.log(e.target.children[1].value);
+        console.log(e.target.children[3].value);
+        console.log(e.target.children[5].value);
+        console.log(e.target.children[7].value);
+        console.log("el id es"+id);
+
         const changePrize=
         {
-                "name": prize.name,
-                "description": prize.description,
-                "points": prize.points,
-                "imgUrl": prize.imgSrc
+                "name": datos[1].value,
+                "description": datos[3].value,
+                "points": datos[5].value,
+                "imgUrl": datos[7].value
         }
-        axios.delete(`${BASE_LOCAL_ENDPOINT}/prizes/${prize.id}`,changePrize)
+        axios.put(`${BASE_LOCAL_ENDPOINT}/prizes/${id}`,changePrize)
     }
 
     deletePrize=(id)=>
@@ -70,6 +78,8 @@ class DetailsPrize extends Component
             prize,
             error
         }=this.state;
+
+        console.log(prize);
         if(error!=="")
         {
             return <div  className="containError">No se pudo conectar con el servidor: {error}</div>
@@ -77,11 +87,22 @@ class DetailsPrize extends Component
         return(
             <>
                 <h1>name:{prize.name}</h1>
-                <img src={prize.imgSrc}/>
-                <p>Description: {prize.description}</p>
-                <h5>points: {prize.points}</h5>
+                <img src={""+prize.imgSrc}/>
+                <p>Description: {""+prize.description}</p>
+                <h5>points: {""+prize.points}</h5>
 
                 <button onClick={()=>this.deletePrize(prize.id)}>Delete</button>
+                <form onSubmit={(e)=>this.changePrize(e,prize.id)}>
+                    <label>Name:</label>
+                    <input defaultValue={prize.name}/>
+                    <label>Url-img:</label>
+                    <input defaultValue={prize.imgSrc}/>
+                    <label>Description:</label>
+                    <input defaultValue={prize.description}/>
+                    <label>Points:</label>
+                    <input type="number" defaultValue={prize.points}/>
+                    <button type="submit">Change</button>
+                </form>
             </>
         )
     }

@@ -1,14 +1,6 @@
 {
   "employees": [
     {
-      "id": 1,
-      "name": "elliot watts",
-      "job": "Bussiness Representative",
-      "area": "Development",
-      "imgSrc": "https://randomuser.me/api/portraits/men/36.jpg",
-      "points": 9
-    },
-    {
       "id": 2,
       "name": "freddie jenkins",
       "job": "Bussiness Representative",
@@ -156,6 +148,13 @@
       "points": 8,
       "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/phone.png",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto voluptas earum maiores quisquam ipsum"
+    },
+    {
+      "name": "League of Legends",
+      "description": "No-Disponible.jpg",
+      "imgUrl": "213",
+      "points": "zsfasgf",
+      "id": 7
     }
   ],
   "achievements": [

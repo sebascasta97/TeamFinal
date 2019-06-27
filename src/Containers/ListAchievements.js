@@ -60,7 +60,13 @@ class ListAchievement extends Component
                 {console.log(error)}
                 <input name="SearchAchievement" placeholder="Search Achievement"/>
                     {content.map(({ id,name,points }) => (
-                        <Achievement  key={id}  name={name} points={points}/>                     
+                        <div>   
+                            <Achievement  key={id}  name={name} points={points}/>  
+                            <button>Delete</button>
+                            <button>Modificar</button>
+                            
+                        </div>
+                                           
                     ))}
                 </>
             );

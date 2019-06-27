@@ -48,10 +48,28 @@ class DetailEmploye extends Component
 
     }
 
-    deteleEmploye=(id)=>
+    changeEmploye=(e,id)=>
     {
+        const datos=e.target.children;
+
+        const changeEmploye=
+        {
+            
+
+                "name": datos[1].value,
+                "job": datos[3].value,
+                "area":datos[5].value,
+                "points": datos[7].value,
+                "imgUrl": datos[9].value
+        }
+        axios.put(`${BASE_LOCAL_ENDPOINT}/employees/${id}`,changeEmploye)
+    }
+
+    deleteEmploye=(id)=>
+    {
+        axios.delete(`${BASE_LOCAL_ENDPOINT}/employees/${id}`);
         
-        //axios.delete()
+       
     }
 render()
     {
@@ -73,7 +91,22 @@ render()
                  <h5>Work Area: {employe.area}</h5>
                  <h5>Estrellas:{employe.points}</h5>
                  
-                 <button onClick={this.deteleEmploye(employe)}>Delete</button>
+                 
+                 <button onClick={()=>this.deleteEmploye(employe.id)}>Delete</button>
+                <form onSubmit={(e)=>this.changeEmploye(e,employe.id)}>
+                    <label>Name:</label>
+                    <input defaultValue={employe.name}/>
+                    <label>Job:</label>
+                    <input defaultValue={employe.job}/>
+                    <label>Work Area:</label>
+                    <input defaultValue={employe.area}/>
+                    <label>Points:</label>
+                    <input type="number" defaultValue={employe.points}/>
+                    <label>Url-img:</label>
+                    <input defaultValue={employe.imgSrc}/>
+                    
+                    <button type="submit">Change</button>
+                </form>
             </>
 
         )
