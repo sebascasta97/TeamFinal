@@ -70,6 +70,9 @@ class ListAchievement extends Component
 
         }
         axios.put(`${BASE_LOCAL_ENDPOINT}/achievements/${id}`,changeAchievement)
+        .then(
+            setTimeout(200,window.location.reload())
+            )
     }
 
     deleteAchievement=(id)=>

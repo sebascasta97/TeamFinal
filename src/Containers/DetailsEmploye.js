@@ -35,7 +35,6 @@ class DetailEmploye extends Component
     
     componentDidMount=()=>
     {
-        //const  id  = toString(this.props.match.params);
         const { match: { params: { id } } } = this.props;
         axios.get(`${BASE_LOCAL_ENDPOINT}/employees/${id}`)
         .then(information => {
@@ -65,10 +64,11 @@ class DetailEmploye extends Component
             {
                 return previous.points-next.points;
             })
-            console.log(arrayPrizes.filter(prize => points >=prize.points));
+        
+            console.log(arrayPrizes.filter(prize => prize.points<=9));
             this.setState({
                 prizes: {
-                    content: arrayPrizes,
+                    content: arrayPrizes.filter(prize => prize.points<=Number(points)),
                     error: ''
                 }
                 
@@ -106,6 +106,8 @@ class DetailEmploye extends Component
                 "imgSrc": datos[9].value
         }
         axios.put(`${BASE_LOCAL_ENDPOINT}/employees/${id}`,changeEmploye)
+        .then(setTimeout(200,window.location.reload()))
+        
     }
 
     deleteEmploye=(id)=>

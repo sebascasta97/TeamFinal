@@ -60,6 +60,7 @@ class DetailsPrize extends Component
                
         }
         axios.put(`${BASE_LOCAL_ENDPOINT}/prizes/${id}`,changePrize)
+        .then(setTimeout(200,window.location.reload()))
     }
 
     deletePrize=(id)=>

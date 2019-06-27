@@ -114,7 +114,7 @@
     },
     {
       "name": "Cristian Palacio",
-      "job": "Developer",
+      "job": "Developer5",
       "area": "Tic",
       "points": "502",
       "imgSrc": "https://randomuser.me/api/portraits/men/35.jpg",
@@ -140,7 +140,7 @@
       "name": "Hotel night",
       "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/hotel.png",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto voluptas earum maiores quisquam ipsum",
-      "points": "3",
+      "points": "5",
       "id": 4
     },
     {
@@ -174,8 +174,8 @@
   ],
   "achievements": [
     {
-      "name": "Teamniversary (5)",
-      "points": "125",
+      "name": "Teamniversary (4)",
+      "points": "2",
       "id": 3
     },
     {
