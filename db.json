@@ -49,12 +49,12 @@
       "points": 4
     },
     {
-      "id": 8,
       "name": "freja møller",
       "job": "Back End Developer",
       "area": "Marketing",
+      "points": "4",
       "imgSrc": "https://randomuser.me/api/portraits/women/54.jpg",
-      "points": 4
+      "id": 8
     },
     {
       "id": 9,
@@ -124,21 +124,21 @@
   "prizes": [
     {
       "name": "Spa day",
-      "imgUrl": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/hotel.png",
+      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/spa.png",
       "description": "asfasfsafdg",
       "points": "12",
       "id": 2
     },
     {
       "name": "Earbug",
-      "imgUrl": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/earbugs.png",
+      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/earbugs.png",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto voluptas earum maiores quisquam ipsum",
       "points": "3",
       "id": 3
     },
     {
       "name": "Hotel night",
-      "imgUrl": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/hotel.png",
+      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/hotel.png",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto voluptas earum maiores quisquam ipsum",
       "points": "3",
       "id": 4
@@ -159,14 +159,14 @@
     },
     {
       "name": "League of Legends",
-      "imgUrl": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/hotel.png",
+      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/phone.png",
       "description": "Un juego",
       "points": "150",
       "id": 7
     },
     {
       "name": "Xbox",
-      "imgUrl": "npne.jpg",
+      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/phone.png",
       "description": "juego Chido",
       "points": "124",
       "id": 8

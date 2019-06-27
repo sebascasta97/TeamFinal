@@ -54,7 +54,7 @@ class DetailsPrize extends Component
         {
             // se recorren los hijos de 2 en 2 debido a los labels
                 "name": datos[1].value,
-                "imgUrl": datos[3].value,
+                "imgSrc": datos[3].value,
                 "description": datos[5].value,
                 "points": datos[7].value
                
