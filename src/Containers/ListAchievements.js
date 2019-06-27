@@ -86,8 +86,8 @@ class ListAchievement extends Component
 
     deleteAchievement=(id)=>
     {
-        axios.delete(`${BASE_LOCAL_ENDPOINT}/achievements/${id}`);
-        
+        axios.delete(`${BASE_LOCAL_ENDPOINT}/achievements/${id}`)
+        .then(()=>window.location.reload())
        
     }
    render() { 

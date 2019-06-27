@@ -106,13 +106,14 @@ class DetailEmploye extends Component
                 "imgSrc": datos[9].value
         }
         axios.put(`${BASE_LOCAL_ENDPOINT}/employees/${id}`,changeEmploye)
-        .then(setTimeout(200,window.location.reload()))
+        .then(()=>window.location.reload())
         
     }
 
     deleteEmploye=(id)=>
     {
-        axios.delete(`${BASE_LOCAL_ENDPOINT}/employees/${id}`);
+        axios.delete(`${BASE_LOCAL_ENDPOINT}/employees/${id}`)
+        .then(()=>this.props.history.push('/employees'))
         
        
     }

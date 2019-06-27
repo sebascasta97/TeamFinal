@@ -4,7 +4,7 @@
       "name": "freddie jenkins1",
       "job": "Bussiness Representative",
       "area": "Sales",
-      "points": "9",
+      "points": "11",
       "imgSrc": "https://randomuser.me/api/portraits/men/53.jpg",
       "id": 2
     },
@@ -111,14 +111,6 @@
       "area": "Sales",
       "imgSrc": "https://randomuser.me/api/portraits/women/44.jpg",
       "points": 1
-    },
-    {
-      "name": "Cristian Palacio",
-      "job": "Developer5",
-      "area": "Tic",
-      "points": "502",
-      "imgSrc": "https://randomuser.me/api/portraits/men/35.jpg",
-      "id": 16
     }
   ],
   "prizes": [
@@ -128,13 +120,6 @@
       "description": "asfasfsafdg",
       "points": "12",
       "id": 2
-    },
-    {
-      "name": "Earbug",
-      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/earbugs.png",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto voluptas earum maiores quisquam ipsum",
-      "points": "3",
-      "id": 3
     },
     {
       "name": "Hotel night",
@@ -158,18 +143,25 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis iusto voluptas earum maiores quisquam ipsum"
     },
     {
-      "name": "League of Legends",
-      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/phone.png",
-      "description": "Un juego",
-      "points": "150",
+      "name": "asfalñn",
+      "description": "lasnfln alslñmsaf",
+      "points": "124",
+      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/spa.png",
       "id": 7
     },
     {
-      "name": "Xbox",
-      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/phone.png",
-      "description": "juego Chido",
-      "points": "124",
+      "name": "asfgsag",
+      "description": "adgs",
+      "points": "123",
+      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/spa.png",
       "id": 8
+    },
+    {
+      "name": "asva12q14",
+      "description": "sfac",
+      "points": "214",
+      "imgSrc": "https://top-gun-lab-images.s3-sa-east-1.amazonaws.com/spa.png",
+      "id": 9
     }
   ],
   "achievements": [

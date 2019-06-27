@@ -43,7 +43,8 @@ class ListEmployees extends Component
 		    "points":  datos[3].value,
             "imgUrl":  datos[4].value
         }
-        axios.post(`${BASE_LOCAL_ENDPOINT}/employees`,Employee);
+        axios.post(`${BASE_LOCAL_ENDPOINT}/employees`,Employee)
+        .then(()=>window.location.reload())
    }
 
    getEmployes= ()=>

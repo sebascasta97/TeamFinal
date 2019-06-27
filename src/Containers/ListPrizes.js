@@ -42,10 +42,11 @@ class ListPrizes extends Component
         "name": e.target.children[0].value,
 		"description":  e.target.children[1].value,
 		"points":  e.target.children[2].value,
-		"imgUrl":  e.target.children[3].value
+		"imgSrc":  e.target.children[3].value
       }
        
-       axios.post(`${BASE_LOCAL_ENDPOINT}/prizes`,datos);
+       axios.post(`${BASE_LOCAL_ENDPOINT}/prizes`,datos)
+       .then(()=>window.location.reload())
    }
 
    getprizes= ()=>
