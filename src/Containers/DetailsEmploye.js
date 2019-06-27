@@ -51,6 +51,12 @@ class DetailEmploye extends Component
     changeEmploye=(e,id)=>
     {
         const datos=e.target.children;
+        console.log("name"+datos[1].value);
+        console.log("job"+datos[3].value);
+        console.log("area"+datos[5].value);
+        console.log("points"+datos[7].value);
+        console.log("imgurl"+datos[9].value);
+
 
         const changeEmploye=
         {
@@ -60,7 +66,7 @@ class DetailEmploye extends Component
                 "job": datos[3].value,
                 "area":datos[5].value,
                 "points": datos[7].value,
-                "imgUrl": datos[9].value
+                "imgSrc": datos[9].value
         }
         axios.put(`${BASE_LOCAL_ENDPOINT}/employees/${id}`,changeEmploye)
     }

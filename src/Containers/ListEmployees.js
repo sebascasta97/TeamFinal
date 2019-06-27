@@ -23,6 +23,19 @@ class ListEmployees extends Component
         this.getEmployes();
    }
 
+   PostEmploye= (e)=>
+   {
+        const datos=e.target.children;
+        const Employee=
+        {
+            "name": datos[0].value,
+		    "job":  datos[1].value,
+		    "area":  datos[2].value,
+		    "points":  datos[3].value,
+            "imgUrl":  datos[4].value
+        }
+        axios.post(`${BASE_LOCAL_ENDPOINT}/employees`,Employee);
+   }
 
    getEmployes= ()=>
    {
@@ -54,7 +67,15 @@ class ListEmployees extends Component
         return <div>No se pudo conectar con el servidor: {error}</div>
     }
     return (
-                <>  
+                <>
+                <form  onSubmit={(e)=>this.PostEmploye(e)}>
+                    <input type="text" placeholder="Name"></input>
+                    <input type="text" placeholder="Job"></input>
+                    <input type="text" placeholder="Work Area"></input>
+                    <input type="text" placeholder="Url-image"></input>
+                    <input type="number" placeholder="Points"></input>
+                    <button type="submit">Create</button>
+                </form>    
                 <input name="txtSearchEmployee" placeholder="buscar empleado"/>
                     {content.map(({ id, imgSrc, name,points }) => (
                         <Link key={id} to={`/employees/${id}`}>

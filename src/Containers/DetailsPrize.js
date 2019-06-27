@@ -48,19 +48,16 @@ class DetailsPrize extends Component
     changePrize=(e,id)=>
     {
         const datos=e.target.children;
-        console.log(e.target.children);
-        console.log(e.target.children[1].value);
-        console.log(e.target.children[3].value);
-        console.log(e.target.children[5].value);
-        console.log(e.target.children[7].value);
-        console.log("el id es"+id);
+        //console.log("el id es"+id);
 
         const changePrize=
         {
+            // se recorren los hijos de 2 en 2 debido a los labels
                 "name": datos[1].value,
-                "description": datos[3].value,
-                "points": datos[5].value,
-                "imgUrl": datos[7].value
+                "imgUrl": datos[3].value,
+                "description": datos[5].value,
+                "points": datos[7].value
+               
         }
         axios.put(`${BASE_LOCAL_ENDPOINT}/prizes/${id}`,changePrize)
     }
@@ -96,7 +93,7 @@ class DetailsPrize extends Component
                     <label>Name:</label>
                     <input defaultValue={prize.name}/>
                     <label>Url-img:</label>
-                    <input defaultValue={prize.imgSrc}/>
+                    <input defaultValue={prize.imgUrl}/>
                     <label>Description:</label>
                     <input defaultValue={prize.description}/>
                     <label>Points:</label>

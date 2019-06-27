@@ -45,6 +45,41 @@ class ListAchievement extends Component
     })
    }
 
+   PostAchievements=(e)=>
+   {
+        const datos=e.target.children;
+        
+        const Achievement=
+        {
+            "name": datos[0].value,
+            "points": datos[1].value
+        }
+        axios.post(`${BASE_LOCAL_ENDPOINT}/achievements`,Achievement);
+   }
+
+   /*changeAchievement=(e,id)=>
+    {
+        const datos=e.target.children;
+
+        const changeAchievement=
+        {
+            
+
+                "name": datos[1].value,
+                "job": datos[3].value,
+                "area":datos[5].value,
+                "points": datos[7].value,
+                "imgUrl": datos[9].value
+        }
+        axios.put(`${BASE_LOCAL_ENDPOINT}/achievements/${id}`,changeEmploye)
+    }*/
+
+    deleteAchievement=(id)=>
+    {
+        axios.delete(`${BASE_LOCAL_ENDPOINT}/achievements/${id}`);
+        
+       
+    }
    render() { 
     const {
         achievements: { content, error }
@@ -56,13 +91,18 @@ class ListAchievement extends Component
     }
 
     return (
-                <>  
+                <>
+                <form  onSubmit={(e)=>this.PostAchievements(e)}>
+                    <input placeholder="Name"></input>
+                    <input placeholder="Points"></input>
+                    <button type="submit">Create</button>
+                </form>  
                 {console.log(error)}
                 <input name="SearchAchievement" placeholder="Search Achievement"/>
                     {content.map(({ id,name,points }) => (
                         <div>   
                             <Achievement  key={id}  name={name} points={points}/>  
-                            <button>Delete</button>
+                            <button onClick={()=>this.deleteAchievement(id)}>Delete</button>
                             <button>Modificar</button>
                             
                         </div>
