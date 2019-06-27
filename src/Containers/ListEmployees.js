@@ -14,13 +14,22 @@ class ListEmployees extends Component
             employees: {
                 content: [],
                 error: false
-            }
+            },
+            filterEmployee:""
         }
    }
 
    componentDidMount = () => 
    {
         this.getEmployes();
+   }
+
+   searchEmploye=(e)=>
+   {
+       const filtertext=e.target.value;
+       console.log(filtertext);
+       this.setState({ "filterEmployee": filtertext })
+    
    }
 
    PostEmploye= (e)=>
@@ -64,9 +73,10 @@ class ListEmployees extends Component
 
    render() { 
     const {
-        employees: { content, error }
+        employees: { content, error },
+        filterEmployee
     } = this.state;
-
+    const filteredEmployee =content.filter(Employee => Employee.name.includes(filterEmployee));
     if (error!=="") {
         return <div>No se pudo conectar con el servidor: {error}</div>
     }
@@ -80,8 +90,8 @@ class ListEmployees extends Component
                     <input type="number" placeholder="Points"></input>
                     <button type="submit">Create</button>
                 </form>    
-                <input name="txtSearchEmployee" placeholder="buscar empleado"/>
-                    {content.map(({ id, imgSrc, name,points }) => (
+                <input name="txtSearchEmployee" placeholder="buscar empleado" onChange={(e) => this.searchEmploye(e)}/>
+                    {filteredEmployee.map(({ id, imgSrc, name,points }) => (
                         <Link key={id} to={`/employees/${id}`}>
 
                         <Employee  key={id} imgSrc={imgSrc} name={name} points={points}/>

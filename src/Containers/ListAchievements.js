@@ -14,7 +14,8 @@ class ListAchievement extends Component
             achievements: {
                 content: [],
                 error: false
-            }
+            },
+            filterAchievement:""
         }
    }
 
@@ -43,6 +44,14 @@ class ListAchievement extends Component
             }   
         })
     })
+   }
+
+   searchAchievement=(e)=>
+   {
+       const filtertext=e.target.value;
+       console.log(filtertext);
+       this.setState({ "filterAchievement": filtertext })
+    
    }
 
    PostAchievements=(e)=>
@@ -83,8 +92,10 @@ class ListAchievement extends Component
     }
    render() { 
     const {
-        achievements: { content, error }
+        achievements: { content, error },
+        filterAchievement
     } = this.state;
+    const filterAchievements =content.filter(Achievement => Achievement.name.includes(filterAchievement));
 
     if (error!=="") {
         
@@ -99,8 +110,8 @@ class ListAchievement extends Component
                     <button type="submit">Create</button>
                 </form>  
                 {console.log(error)}
-                <input name="SearchAchievement" placeholder="Search Achievement"/>
-                    {content.map(({ id,name,points }) => (
+                <input name="SearchAchievement" placeholder="Search Achievement" onChange={(e) => this.searchAchievement(e)}/>
+                    {filterAchievements.map(({ id,name,points }) => (
                         <div key={id}>   
                             <Achievement name={name} points={points}/>  
                             <button onClick={()=>this.deleteAchievement(id)}>Delete</button>

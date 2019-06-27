@@ -29,7 +29,7 @@ class ListPrizes extends Component
    {
        const filtertext=e.target.value;
        console.log(filtertext);
-       this.setState({ "[filterPrize]": filtertext })
+       this.setState({ "filterPrize": filtertext })
     
    }
    PostPrize= (e)=>
@@ -78,11 +78,11 @@ class ListPrizes extends Component
         prizes: { content, error},
         filterPrize
     } = this.state;
-    const filteredPrizes =content.filter(prizes => prizes.name.includes(filterPrize));
-
+    console.log("el filter tiene"+filterPrize)
+    const filteredPrizes =content.filter(prize => prize.name.includes(filterPrize));
    
         
-    console.log(filteredPrizes);
+    
 
     if (error!=="") {
         return <div>No se pudo conectar con el servidor, por favor intentelo nuevamente: {error}</div>
