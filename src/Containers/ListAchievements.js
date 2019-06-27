@@ -57,7 +57,7 @@ class ListAchievement extends Component
         axios.post(`${BASE_LOCAL_ENDPOINT}/achievements`,Achievement);
    }
 
-   /*changeAchievement=(e,id)=>
+   changeAchievement=(e,id)=>
     {
         const datos=e.target.children;
 
@@ -66,13 +66,11 @@ class ListAchievement extends Component
             
 
                 "name": datos[1].value,
-                "job": datos[3].value,
-                "area":datos[5].value,
-                "points": datos[7].value,
-                "imgUrl": datos[9].value
+                "points": datos[3].value,
+
         }
-        axios.put(`${BASE_LOCAL_ENDPOINT}/achievements/${id}`,changeEmploye)
-    }*/
+        axios.put(`${BASE_LOCAL_ENDPOINT}/achievements/${id}`,changeAchievement)
+    }
 
     deleteAchievement=(id)=>
     {
@@ -104,6 +102,14 @@ class ListAchievement extends Component
                             <Achievement  key={id}  name={name} points={points}/>  
                             <button onClick={()=>this.deleteAchievement(id)}>Delete</button>
                             <button>Modificar</button>
+                            <form  onSubmit={(e)=>this.changeAchievement(e,id)}>
+                                <label>Name:</label>
+                                <input placeholder="Name" defaultValue={name}></input>
+                                <label>Points:</label>
+                                <input placeholder="Points" defaultValue={points}></input>
+                                <button type="submit">Change</button>
+                            </form>  
+                            
                             
                         </div>
                                            
