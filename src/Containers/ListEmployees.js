@@ -39,9 +39,10 @@ class ListEmployees extends Component
         {
             "name": datos[0].value,
 		    "job":  datos[1].value,
-		    "area":  datos[2].value,
-		    "points":  datos[3].value,
-            "imgUrl":  datos[4].value
+            "area":  datos[2].value,
+            "imgSrc":  datos[3].value,
+		    "points":  datos[4].value
+            
         }
         axios.post(`${BASE_LOCAL_ENDPOINT}/employees`,Employee)
         .then(()=>window.location.reload())
@@ -78,11 +79,12 @@ class ListEmployees extends Component
         filterEmployee
     } = this.state;
     const filteredEmployee =content.filter(Employee => Employee.name.includes(filterEmployee));
-    if (error!=="") {
+    if (error!=="" ) {
         return <div>No se pudo conectar con el servidor: {error}</div>
     }
     return (
-                <>
+                <div className="backgroundTeam">
+                
                 <form  onSubmit={(e)=>this.PostEmploye(e)}>
                     <input type="text" placeholder="Name"></input>
                     <input type="text" placeholder="Job"></input>
@@ -91,15 +93,16 @@ class ListEmployees extends Component
                     <input type="number" placeholder="Points"></input>
                     <button type="submit">Create</button>
                 </form>    
-                <input name="txtSearchEmployee" placeholder="buscar empleado" onChange={(e) => this.searchEmploye(e)}/>
+                <input className="buscarEmpleado" name="txtSearchEmployee" placeholder="Buscar Empleado" onChange={(e) => this.searchEmploye(e)}/>
+                   <div className="containerEmployees">
                     {filteredEmployee.map(({ id, imgSrc, name,points }) => (
                         <Link key={id} to={`/employees/${id}`}>
 
                         <Employee  key={id} imgSrc={imgSrc} name={name} points={points}/>
                         </Link>
                     ))}
-                    
-                </>
+                  </div>
+                </div>
             );
     }
 }

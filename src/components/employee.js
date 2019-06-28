@@ -4,11 +4,17 @@ function Employee({  imgSrc, name,points})
 {
     return(
         <>
-            <div>
-                <h1>{name}</h1>
-                <img src={imgSrc} alt="Img Employe"></img>
+           <div className="flip-card">
+             <div className="flip-card-inner">
+              <div className="flip-card-front">
+              <img className="imgRadio"  src={imgSrc} alt="Img Employe"></img>
+              <h1>{name}</h1> 
+              </div>
+              <div className="flip-card-back">   
                 <strong>{points}</strong>
                 <label>*</label>
+              </div>  
+             </div>
             </div>
             
         </>
