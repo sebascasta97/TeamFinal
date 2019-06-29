@@ -138,7 +138,7 @@ render()
                 
                 <div className="CardDetail">
                  <h1>{employe.name}</h1>
-                 <img src={employe.imgSrc} alt="Img Employee" />
+                 <img className="imgProfile" src={employe.imgSrc} alt="Img Employee" />
                  <h5>Job: {employe.job}</h5>
                  <h5>Work Area: {employe.area}</h5>
                  <h5>Points:{employe.points}</h5>
@@ -162,6 +162,7 @@ render()
                     <input className="InputForm" defaultValue={employe.imgSrc}/>
                     <button className="btn-Change btn" type="submit">Change</button>
                 </form>
+                <div className="containerEmployees">
                 <h1>Prizes</h1>
                 {
                     prizes.content.map(({ id, imgSrc, name,points}) => (
@@ -172,6 +173,7 @@ render()
                     ))
                
                 }
+                </div>
             </>
 
         )

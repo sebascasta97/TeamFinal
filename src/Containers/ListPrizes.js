@@ -113,7 +113,7 @@ class ListPrizes extends Component
             <div >
              <Button className="btnCrear2" color="danger" onClick={this.toggle}>Add{this.props.buttonLabel}</Button>
              <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} className="crearEmployee animated bounce" >
-              <ModalHeader toggle={this.toggle}>CREATE A NEW EPLOYEE </ModalHeader>
+              <ModalHeader toggle={this.toggle}>CREATE A NEW PRIZE </ModalHeader>
               <ModalBody>
                 <form  onSubmit={(e)=>this.PostPrize(e)}>
                         <input className="campos" type="text"  placeholder="name"/>

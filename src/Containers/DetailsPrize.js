@@ -92,7 +92,7 @@ class DetailsPrize extends Component
             <>
             <div className="CardDetail">
                 <h1>Name:{prize.name}</h1>
-                <img src={""+prize.imgSrc} alt="Img Prize"/>
+                <img className="imgProfile"  src={""+prize.imgSrc} alt="Img Prize"/>
                 <p>Description: {""+prize.description}</p>
                 <h5>Points: {""+prize.points}</h5>
 
@@ -109,7 +109,7 @@ class DetailsPrize extends Component
                     <input className="InputForm" defaultValue={prize.description}/>
                     <label className="LabelForm">Points:</label>
                     <input className="InputForm" type="number" defaultValue={prize.points}/>
-                    <button className="btn-Change btn" type="submit">Change</button>
+                    <button id="btn-Change2" type="submit">Change</button>
                 </form>
             </>
         )

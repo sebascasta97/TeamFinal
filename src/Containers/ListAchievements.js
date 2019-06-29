@@ -2,6 +2,7 @@ import React,{ Component} from 'react';
 import { BASE_LOCAL_ENDPOINT } from '../constants';
 import Achievement from '../components/Achievements';
 import axios from 'axios';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 //import {Link} from 'react-router-dom';
 
 class ListAchievement extends Component
@@ -10,14 +11,22 @@ class ListAchievement extends Component
    {
         super(props);
         this.state=
-        {
+        {   
+            modal: false,
             achievements: {
                 content: [],
                 error: false
             },
             filterAchievement:""
-        }
+        };
+        this.toggle = this.toggle.bind(this);
    }
+
+   toggle() {
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
+  }
 
    componentDidMount = () => 
    {
@@ -108,19 +117,36 @@ class ListAchievement extends Component
     }
 
     return (
-                <>
-                <form  onSubmit={(e)=>this.PostAchievements(e)}>
-                    <input placeholder="Name"></input>
-                    <input placeholder="Points"></input>
-                    <button type="submit">Create</button>
-                </form>  
-                {console.log(error)}
-                <input name="SearchAchievement" placeholder="Search Achievement" onChange={(e) => this.searchAchievement(e)}/>
+    <>
+
+            <input  className="buscarAchievement" name="SearchAchievement" placeholder="Search Achievement" onChange={(e) => this.searchAchievement(e)}/>
+            <Button className="btnCrear2" color="danger" onClick={this.toggle}>Create{this.props.buttonLabel}</Button>
+             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} className="crearEmployee animated bounce" >
+              <ModalHeader toggle={this.toggle}>CREATE A NEW ACHIEVEMENT </ModalHeader>
+              <ModalBody>
+
+
+                  
+             
+              <form  onSubmit={(e)=>this.PostAchievements(e)}>
+                    <input className="campos" placeholder="Name"></input>
+                    <input className="campos" placeholder="Points"></input>
+                    <button className="btnCrear" type="submit">Create</button>
+              </form> 
+
+             </ModalBody>
+            </Modal>
+
+ 
+
+               
+                <div className="containerEmployees"> 
+                {console.log(error)}        
                     {filterAchievements.map(({ id,name,points }) => (
-                        <div key={id}>   
+                        <div  key={id}>   
                             <Achievement name={name} points={points}/>  
-                            <button className="btn-Delete" onClick={()=>this.deleteAchievement(id)}>Delete</button>
-                            <button className="btn-Change" onClick={()=>this.mostrar(id)}>Change</button>
+                            <button  onClick={()=>this.deleteAchievement(id)}>Delete</button>
+                            <button  onClick={()=>this.mostrar(id)}>Change</button>
                             
                             <form  className={`FormDetail${id} ocultar `} onSubmit={(e)=>this.changeAchievement(e,id)}>
                                 <label className="LabelFormAchivements">Name:</label>
@@ -134,6 +160,7 @@ class ListAchievement extends Component
                         </div>
                                            
                     ))}
+                    </div>
                 </>
             );
     }

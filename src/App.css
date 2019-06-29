@@ -73,7 +73,7 @@
   position: relative;
   height:50px;
   width:60px;
-  background: url(img/Logo.png) no-repeat;
+  background: url(img/logo.png) no-repeat;
 
 }
 .color-purple
@@ -201,6 +201,8 @@ li span:hover {
  
 
 }
+
+
 
 .containerEmployees
 {
@@ -368,34 +370,83 @@ padding: 40px;
 .CardDetail
 {
   width:100%;
-  border:1px solid black;
-  background: #35CD40;
   text-align: center;
+  background-image: url(https://www.teaminternational.com/wp-content/uploads/2019/05/form-background-all.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border:1px solid #3fa420;
+  color: white;
 }
 .btn-Delete
 {
-  background:#E85C5C;
-  border-radius: 6px;
-  border: 0px;
-  margin: 5px;
-  padding: 5px 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  background-color: #253746;
+  color: white;
+  padding: 12px 50px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  margin: 4px;
+  margin-left: 63px;
+  padding: 6px 15px;
+  top: -14px;
+  left: -30px;
 }
-.btn-Delete:hover
-{
-  background:#DD4040;
-}
+
 
 .btn-Change
 {
-  background:#F5F345;
-  border-radius: 6px;
-  border: 0px;
+  
+  
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  background-color: #253746;
+  color: white;
+  padding: 12px 50px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  top: -14px;
+  left: -22px;
   margin: 5px;
-  padding: 4px 10px;
+  padding: 6px 10px;
+  position: relative;
 }
+
+
+#btn-Change2
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    background-color: #253746;
+    color: white;
+    padding: 12px 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    top: 3px;
+    left: 446px;
+    margin: 4px;
+    padding: 6px 82px;
+    position: relative;
+  }
+
 .btn-Change:hover
 {
-  background:#F9F521;
+  color: #35CD40;
+}
+
+#btn-Change2:hover
+{
+  color: #35CD40;
+}
+
+.btn-Delete:hover
+{
+  color: #35CD40;
 }
 
 .ocultar
@@ -430,15 +481,15 @@ padding: 40px;
   box-sizing: border-box;
   
 }
-.btn
+
+
+.imgProfile
 {
-  text-align:center;
-  margin: 1% 45%;
-  width: 9%;
-  height:35px; 
+ 
+  border: 6px solid #253746;
 }
 
-/*-------------Archivements*/
+/*-------------Archivements-------------------*/
 
 .LabelFormAchivements
 {
@@ -461,4 +512,34 @@ padding: 40px;
   border-radius: 4px;
   box-sizing: border-box;
   
+}
+
+.flip-card-Achievement
+{
+  background-color: transparent;
+  width: 864px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 10px;
+  margin-left: 0px;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+
+}
+
+.buscarAchievement {
+  width: 31%;
+  padding: 8px 20px;
+  margin: 5px 6px;
+  margin-left: 46%;
+  display: inline-block;
+  border: 0px solid #253746;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  position: relative;
+  top: -56px;
 }
