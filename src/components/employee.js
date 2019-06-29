@@ -8,10 +8,11 @@ import estrella from '../img/patricio.webp';
   color: white;
 ;*/
 
+
 function Employee({  imgSrc, name,points})
 {
   
-  const ArrayColors=["color-purple","color-aqua","color-ClearBlue","color-yellow","color-orange","color-pink"]
+  const ArrayColors=["color-purple","color-aqua","color-ClearBlue","color-yellow","color-orange","color-pink"];
     return(
         <>
         

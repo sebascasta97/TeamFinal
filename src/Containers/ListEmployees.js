@@ -3,6 +3,8 @@ import { BASE_LOCAL_ENDPOINT } from '../constants';
 import Employee from '../components/employee';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+
 
 class ListEmployees extends Component
 {
@@ -10,14 +12,26 @@ class ListEmployees extends Component
    {
         super(props);
         this.state=
-        {
+        {   
+            modal: false,
             employees: {
                 content: [],
                 error: false
             },
             filterEmployee:""
-        }
+        };
+        this.toggle = this.toggle.bind(this);
+
    }
+
+
+   toggle() {
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
+  }
+
+   
 
    componentDidMount = () => 
    {
@@ -88,14 +102,30 @@ class ListEmployees extends Component
         return (
             <>
             <input className="buscarEmpleado" name="txtSearchEmployee" placeholder="Buscar Empleado" onChange={(e) => this.searchEmploye(e)}/>
-            <form  onSubmit={(e)=>this.PostEmploye(e)}>
-                <input type="text" placeholder="Name"></input>
-                <input type="text" placeholder="Job"></input>
-                <input type="text" placeholder="Work Area"></input>
-                <input type="text" placeholder="Url-image"></input>
-                <input type="number" placeholder="Points"></input>
-                <button type="submit">Create</button>
-            </form>    
+            <div >
+             <Button className="btnCrear2" color="danger" onClick={this.toggle}>Create{this.props.buttonLabel}</Button>
+             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} className="crearEmployee animated bounce" >
+              <ModalHeader toggle={this.toggle}>CREATE A NEW EPLOYEE </ModalHeader>
+              <ModalBody>
+
+
+                  
+             
+             <form  onSubmit={(e)=>this.PostEmploye(e)}>
+                <input className="campos" type="text" placeholder="Name"></input>
+                <input className="campos" type="text" placeholder="Job"></input>
+                <input className="campos" type="text" placeholder="Work Area"></input>
+                <input className="campos" type="text" placeholder="Url-image"></input>
+                <input className="campos" type="number" placeholder="Points"></input>
+                <button className="btnCrear" type="submit">Create</button>
+                
+            </form>  
+
+          </ModalBody>
+        </Modal>
+      </div>
+            
+  
                <div className="containerEmployees">
                 {filteredEmployee.map(({ id, imgSrc, name,points }) => (
                     <Link key={id} to={`/employees/${id}`}>

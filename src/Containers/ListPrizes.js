@@ -3,6 +3,8 @@ import { BASE_LOCAL_ENDPOINT } from '../constants';
 import Prize from '../components/Prize';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+
 
 class ListPrizes extends Component
 {
@@ -10,15 +12,24 @@ class ListPrizes extends Component
    {
         super(props);
         this.state=
-        {
+        {   
+            modal: false,
             prizes: {
                 content: [],
                 error: false
             },
             filterPrize:""
+            
 
-        }
+        };
+        this.toggle = this.toggle.bind(this);
    }
+
+   toggle() {
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
+  }
 
    componentDidMount = () => 
    {
@@ -94,23 +105,36 @@ class ListPrizes extends Component
 
     }
     return (
-                <>
-                <form  onSubmit={(e)=>this.PostPrize(e)}>
-                        <input type="text"  placeholder="name"/>
-                        <input type="text" placeholder="Descripcion"/>
-                        <input type="number" placeholder="points"/>
-                        <input type="text"  placeholder="url-img"/>
-                        <button  type="submit">Add</button>
-                        
-                </form>  
-                <input name="txtSearchPrize" placeholder="Search a Prize" onChange={(e) => this.searchPrizes(e)}/>
-                    {filteredPrizes.map(({ id, imgSrc, name,points}) => (
-                        <Link key={id} to={`/prizes/${id}`}>
+        <>
+            <input className="buscarEmpleado" name="txtSearchPrize" placeholder="Search a Prize" onChange={(e) => this.searchPrizes(e)}/>
 
-                        <Prize  key={id} imgSrc={imgSrc} name={name} points={points}/>
-                        </Link>
-                    ))}
-                </>
+
+
+            <div >
+             <Button className="btnCrear2" color="danger" onClick={this.toggle}>Add{this.props.buttonLabel}</Button>
+             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} className="crearEmployee animated bounce" >
+              <ModalHeader toggle={this.toggle}>CREATE A NEW EPLOYEE </ModalHeader>
+              <ModalBody>
+                <form  onSubmit={(e)=>this.PostPrize(e)}>
+                        <input className="campos" type="text"  placeholder="name"/>
+                        <input className="campos" type="text" placeholder="Descripcion"/>
+                        <input className="campos" type="number" placeholder="points"/>
+                        <input className="campos" type="text"  placeholder="url-img"/>
+                        <button className="btnCrear"  type="submit">Add</button>  
+                </form>  
+              </ModalBody>
+             </Modal>
+           </div>
+
+           <div className="containerEmployees">
+             {filteredPrizes.map(({ id, imgSrc, name,points}) => (
+                <Link key={id} to={`/prizes/${id}`}>
+
+                <Prize  key={id} imgSrc={imgSrc} name={name} points={points}/>
+                </Link>
+                ))}
+            </div>
+        </>
             );
     }
 }
