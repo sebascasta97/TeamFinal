@@ -70,6 +70,11 @@ class DetailsPrize extends Component
        
        
     }
+    mostrar()
+    {
+        
+        document.getElementsByClassName("FormDetail")[0].className="FormDetail";
+    }
 
     render()
     {
@@ -85,22 +90,26 @@ class DetailsPrize extends Component
         }
         return(
             <>
-                <h1>name:{prize.name}</h1>
+            <div className="CardDetail">
+                <h1>Name:{prize.name}</h1>
                 <img src={""+prize.imgSrc} alt="Img Prize"/>
                 <p>Description: {""+prize.description}</p>
-                <h5>points: {""+prize.points}</h5>
+                <h5>Points: {""+prize.points}</h5>
 
-                <button onClick={()=>this.deletePrize(prize.id)}>Delete</button>
-                <form onSubmit={(e)=>this.changePrize(e,prize.id)}>
-                    <label>Name:</label>
-                    <input defaultValue={prize.name}/>
-                    <label>Url-img:</label>
-                    <input defaultValue={prize.imgSrc}/>
-                    <label>Description:</label>
-                    <input defaultValue={prize.description}/>
-                    <label>Points:</label>
-                    <input type="number" defaultValue={prize.points}/>
-                    <button type="submit">Change</button>
+                <button className="btn-Delete" onClick={()=>this.deletePrize(prize.id)}>Delete</button>
+                <button className="btn-Change" onClick={(e)=>this.mostrar(e)}>Change</button>
+            </div>
+                <form className="FormDetail ocultar" onSubmit={(e)=>this.changePrize(e,prize.id)}>
+                
+                    <label className="LabelForm">Name:</label>
+                    <input className="InputForm" defaultValue={prize.name}/>
+                    <label className="LabelForm">Url-img:</label>
+                    <input className="InputForm" defaultValue={prize.imgSrc}/>
+                    <label className="LabelForm">Description:</label>
+                    <input className="InputForm" defaultValue={prize.description}/>
+                    <label className="LabelForm">Points:</label>
+                    <input className="InputForm" type="number" defaultValue={prize.points}/>
+                    <button className="btn-Change btn" type="submit">Change</button>
                 </form>
             </>
         )

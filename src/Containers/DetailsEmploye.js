@@ -3,6 +3,7 @@ import axios from 'axios';
 import { BASE_LOCAL_ENDPOINT } from '../constants';
 import Prize from '../components/Prize';
 import {Link} from 'react-router-dom';
+import { Button } from 'reactstrap';
 
 class DetailEmploye extends Component
 {
@@ -87,6 +88,7 @@ class DetailEmploye extends Component
 
     changeEmploye=(e,id)=>
     {
+        e.preventDefault();
         const datos=e.target.children;
         console.log("name"+datos[1].value);
         console.log("job"+datos[3].value);
@@ -117,6 +119,12 @@ class DetailEmploye extends Component
         
        
     }
+    mostrar()
+    {
+        
+        document.getElementsByClassName("FormDetail")[0].className="FormDetail";
+    }
+    
 render()
     {
         const {prizes,employe,error} = this.state;
@@ -128,29 +136,31 @@ render()
         return(
             <>
                 
-                
+                <div className="CardDetailEmployee">
                  <h1>{employe.name}</h1>
-                 <h5>Hired in: xxxxx</h5>
                  <img src={employe.imgSrc} alt="Img Employee" />
                  <h5>Job: {employe.job}</h5>
                  <h5>Work Area: {employe.area}</h5>
-                 <h5>Estrellas:{employe.points}</h5>
+                 <h5>Points:{employe.points}</h5>
+                 <button className="btn-Delete" onClick={()=>this.deleteEmploye(employe.id)} >Delete</button>
+                 <button className="btn-Change" onClick={(e)=>this.mostrar(e)}>Change</button>
+                 </div>
                  
                  
-                 <button onClick={()=>this.deleteEmploye(employe.id)}>Delete</button>
-                <form onSubmit={(e)=>this.changeEmploye(e,employe.id)}>
-                    <label>Name:</label>
-                    <input defaultValue={employe.name}/>
-                    <label>Job:</label>
-                    <input defaultValue={employe.job}/>
-                    <label>Work Area:</label>
-                    <input defaultValue={employe.area}/>
-                    <label>Points:</label>
-                    <input type="number" defaultValue={employe.points}/>
-                    <label>Url-img:</label>
-                    <input defaultValue={employe.imgSrc}/>
+
+                <form className="FormDetail ocultar" onSubmit={(e)=>this.changeEmploye(e,employe.id)}>
                     
-                    <button type="submit">Change</button>
+                    <label className="LabelForm">Name:</label>
+                    <input className="InputForm" defaultValue={employe.name}/>
+                    <label className="LabelForm">Job:</label>
+                    <input className="InputForm" defaultValue={employe.job}/>
+                    <label className="LabelForm">Work Area:</label>
+                    <input className="InputForm" defaultValue={employe.area}/>
+                    <label className="LabelForm">Points:</label>
+                    <input className="InputForm" type="number" defaultValue={employe.points}/>
+                    <label className="LabelForm">Url-img:</label>
+                    <input className="InputForm" defaultValue={employe.imgSrc}/>
+                    <button className="btn-Change btn" type="submit">Change</button>
                 </form>
                 <h1>Prizes</h1>
                 {

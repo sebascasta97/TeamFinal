@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App-logo {
@@ -72,7 +73,7 @@
   position: relative;
   height:50px;
   width:60px;
-  background: url(img/logo.png) no-repeat;
+  background: url(img/Logo.png) no-repeat;
 
 }
 .color-purple
@@ -360,4 +361,79 @@ width: 55%;
 height: 50%;
 border-radius: 47px;
 padding: 40px;
+}
+
+/*-------------------Details employee and prizes----------------------*/
+
+.CardDetail
+{
+  width:100%;
+  border:1px solid black;
+  background: #35CD40;
+  text-align: center;
+}
+.btn-Delete
+{
+  background:#E85C5C;
+  border-radius: 6px;
+  border: 0px;
+  margin: 5px;
+  padding: 5px 15px;
+}
+.btn-Delete:hover
+{
+  background:#DD4040;
+}
+
+.btn-Change
+{
+  background:#F5F345;
+  border-radius: 6px;
+  border: 0px;
+  margin: 5px;
+  padding: 4px 10px;
+}
+.btn-Change:hover
+{
+  background:#F9F521;
+}
+
+.ocultar
+{
+  display: none;
+}
+
+.FormDetail
+{
+  width: 100%;
+  margin: 7px 0px;
+}
+.LabelForm
+{
+  margin:5px 0px;
+  display: inline-block;
+  max-width: 15%;
+  min-width: 15%;
+  padding-right: 5%;
+  margin-left: 30%;
+}
+
+.InputForm
+{
+  padding: 6px 0px;
+  margin:5px 0px;
+  display: inline-block;
+  max-width: 45%;
+  min-width: 45%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  
+}
+.btn
+{
+  text-align:center;
+  margin: 1% 45%;
+  width: 9%;
+  height:35px; 
 }

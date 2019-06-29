@@ -72,8 +72,8 @@ class ListPrizes extends Component
             prizes: {
                 content: arrayPrizes,
                 error: ''
-            },
-            createprizesError: false
+            }
+            
         })
     })
     .catch(error => {
