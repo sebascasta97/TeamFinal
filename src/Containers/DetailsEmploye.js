@@ -122,7 +122,7 @@ class DetailEmploye extends Component
     mostrar()
     {
         
-        document.getElementsByClassName("FormDetail")[0].className="FormDetail";
+        document.getElementsByClassName("FormDetail")[0].className="FormDetail animated  fadeInDown  ";
     }
     
 render()
@@ -136,7 +136,7 @@ render()
         return(
             <>
                 
-                <div className="CardDetailEmployee">
+                <div className="CardDetail">
                  <h1>{employe.name}</h1>
                  <img src={employe.imgSrc} alt="Img Employee" />
                  <h5>Job: {employe.job}</h5>

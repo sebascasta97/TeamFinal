@@ -8,6 +8,7 @@ import ListPrizes from './Containers/ListPrizes';
 import DetailEmploye from './Containers/DetailsEmploye';
 import DetailsPrize from './Containers/DetailsPrize';
 import './App.css';
+import './animate.css';
 
 
 

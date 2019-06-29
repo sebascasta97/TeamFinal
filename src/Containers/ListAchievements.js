@@ -90,6 +90,11 @@ class ListAchievement extends Component
         .then(()=>window.location.reload())
        
     }
+    mostrar(id)
+    {
+        
+        document.getElementsByClassName("FormDetail"+id)[0].className="FormDetail animated  fadeInDown";
+    }
    render() { 
     const {
         achievements: { content, error },
@@ -114,14 +119,15 @@ class ListAchievement extends Component
                     {filterAchievements.map(({ id,name,points }) => (
                         <div key={id}>   
                             <Achievement name={name} points={points}/>  
-                            <button onClick={()=>this.deleteAchievement(id)}>Delete</button>
-                            <button>Change</button>
-                            <form  onSubmit={(e)=>this.changeAchievement(e,id)}>
+                            <button className="btn-Delete" onClick={()=>this.deleteAchievement(id)}>Delete</button>
+                            <button className="btn-Change" onClick={()=>this.mostrar(id)}>Change</button>
+                            
+                            <form  className={`FormDetail${id} ocultar `} onSubmit={(e)=>this.changeAchievement(e,id)}>
                                 <label>Name:</label>
                                 <input placeholder="Name" defaultValue={name}></input>
                                 <label>Points:</label>
                                 <input placeholder="Points" defaultValue={points}></input>
-                                <button type="submit">Change</button>
+                                <button className="btn-Change btn" type="submit">Change</button>
                             </form>  
                             
                             

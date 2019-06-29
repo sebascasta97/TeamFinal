@@ -73,7 +73,7 @@ class DetailsPrize extends Component
     mostrar()
     {
         
-        document.getElementsByClassName("FormDetail")[0].className="FormDetail";
+        document.getElementsByClassName("FormDetail")[0].className="FormDetail animated  fadeInDown";
     }
 
     render()
@@ -99,7 +99,7 @@ class DetailsPrize extends Component
                 <button className="btn-Delete" onClick={()=>this.deletePrize(prize.id)}>Delete</button>
                 <button className="btn-Change" onClick={(e)=>this.mostrar(e)}>Change</button>
             </div>
-                <form className="FormDetail ocultar" onSubmit={(e)=>this.changePrize(e,prize.id)}>
+                <form className="FormDetail ocultar " onSubmit={(e)=>this.changePrize(e,prize.id)}>
                 
                     <label className="LabelForm">Name:</label>
                     <input className="InputForm" defaultValue={prize.name}/>
