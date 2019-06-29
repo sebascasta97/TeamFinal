@@ -72,9 +72,39 @@
   position: relative;
   height:50px;
   width:60px;
-  background: url(img/logo.PNG) no-repeat;
+  background: url(img/logo.png) no-repeat;
 
 }
+.color-purple
+{
+  background:#8941C4;
+}
+
+.color-aqua
+{
+  background:#22A6F5;
+}
+
+.color-ClearBlue
+{
+  background:#2BDDD7;
+}
+
+.color-yellow
+{
+  background:#FECD00;
+}
+
+.color-orange
+{
+  background:#F67B27;
+}
+
+.color-pink
+{
+  background:#E32E7F;
+}
+
 
 
 
@@ -151,14 +181,8 @@ li span:hover {
   font-size: 20px;
   
 }
-/*background*/
-.backgroundTeam{
 
-background: url(https://www.teaminternational.com/wp-content/uploads/2019/05/form-background-all.jpg);
-background-position: center center;
-background-repeat: no-repeat;
-background-size: cover;
-}
+
 
 /*Style Cards*/
 
@@ -191,6 +215,7 @@ background-size: cover;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 20px;
+  font-family: 'Open Sans', sans-serif;
   
 }
 
@@ -208,9 +233,10 @@ background-size: cover;
 }
 
 .flip-card-front {
-  background-color: #8941C4;
+ 
   color: black;
   border-radius: 20px;
+  font-family: 'Open Sans', sans-serif;
   color: white;
   
 }
@@ -224,7 +250,23 @@ padding: 40px;
 }
 
 .flip-card-back {
-  background-color: #2980b9;
+  background-color: #35CD40;
   color: white;
   transform: rotateY(180deg);
+}
+
+.patricio
+{
+  width: 200px;
+  height: 200px;
+  padding: 69px;
+  padding-left: 68px;
+  padding-top: 0px;
+  margin: -12px;
+  
+}
+
+.numero
+{
+  font-size: 80px;
 }

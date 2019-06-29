@@ -1,6 +1,6 @@
 import  React from 'react';
 import {Link} from 'react-router-dom';
-import Logo from '../img/Logo.png';
+import Logo from '../img/logo.png';
 
 function Menu()
 {
@@ -9,8 +9,7 @@ function Menu()
             {
              <ul className="MenuContainer">
                    <Link to={'/'}>
-                    <li  className="itemMenuLogo">      
-                        
+                    <li  className="itemMenuLogo">                           
                     </li >
                     </Link> 
                     <Link to={'/employees'}>

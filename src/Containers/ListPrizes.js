@@ -89,6 +89,10 @@ class ListPrizes extends Component
         return <div>No se pudo conectar con el servidor, por favor intentelo nuevamente: {error}</div>
     }
 
+    else
+    {
+
+    }
     return (
                 <>
                 <form  onSubmit={(e)=>this.PostPrize(e)}>
