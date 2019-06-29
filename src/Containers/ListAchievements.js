@@ -123,10 +123,10 @@ class ListAchievement extends Component
                             <button className="btn-Change" onClick={()=>this.mostrar(id)}>Change</button>
                             
                             <form  className={`FormDetail${id} ocultar `} onSubmit={(e)=>this.changeAchievement(e,id)}>
-                                <label>Name:</label>
-                                <input placeholder="Name" defaultValue={name}></input>
-                                <label>Points:</label>
-                                <input placeholder="Points" defaultValue={points}></input>
+                                <label className="LabelFormAchivements">Name:</label>
+                                <input className="InputFormAchivements" placeholder="Name" defaultValue={name}></input>
+                                <label className="LabelFormAchivements">Points:</label>
+                                <input className="InputFormAchivements" placeholder="Points" defaultValue={points}></input>
                                 <button className="btn-Change btn" type="submit">Change</button>
                             </form>  
                             

@@ -437,3 +437,28 @@ padding: 40px;
   width: 9%;
   height:35px; 
 }
+
+/*-------------Archivements*/
+
+.LabelFormAchivements
+{
+  margin:5px 0px;
+  display: inline-block;
+  max-width: 15%;
+  min-width: 15%;
+  padding-right: 10%;
+  margin-left: 5%;
+}
+
+.InputFormAchivements
+{
+  padding: 6px 0px;
+  margin:5px 0px;
+  display: inline-block;
+  max-width: 45%;
+  min-width: 45%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  
+}
