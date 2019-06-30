@@ -364,6 +364,11 @@ padding: 40px;
 
 /*-------------------Details employee and prizes----------------------*/
 
+.ContainerPoints
+{
+  background-image: url(img/estrella.png) no-repeat !important;
+
+}
 .CardDetail
 {
   width:100%;

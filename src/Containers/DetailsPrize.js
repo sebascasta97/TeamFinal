@@ -1,6 +1,7 @@
 import React,{ Component} from 'react';
 import {BASE_LOCAL_ENDPOINT} from '../constants';
 import axios from 'axios';
+import estrella from '../img/estrella.png';
 //import {Link,Redirect} from 'react-router-dom';
 
 
@@ -94,7 +95,12 @@ class DetailsPrize extends Component
                 <h1>Name:{prize.name}</h1>
                 <img className="imgProfile"  src={""+prize.imgSrc} alt="Img Prize"/>
                 <p>Description: {""+prize.description}</p>
-                <h5>Points: {""+prize.points}</h5>
+               
+                <div className="ContainerPoints">
+                    <h5>{prize.points}</h5>  
+                    <h5>Points: </h5> 
+                </div>
+                
 
                 <button className="btn-Delete" onClick={()=>this.deletePrize(prize.id)}>Delete</button>
                 <button className="btn-Change" onClick={(e)=>this.mostrar(e)}>Change</button>
