@@ -4,6 +4,8 @@ import { BASE_LOCAL_ENDPOINT } from '../constants';
 import Prize from '../components/Prize';
 import {Link} from 'react-router-dom';
 import { Button } from 'reactstrap';
+import estrellas from '../img/estrella.png';
+import estrellaa from '../img/patric.png';
 
 class DetailEmploye extends Component
 {
@@ -131,7 +133,11 @@ render()
         
     
         if (error!=="" || prizes.error!=="") {
-            return <div>No se pudo conectar con el servidor: {error}</div>
+            return <div className="nNetwork">
+            <h1>No se pudo conectar con el servidor...  {error}</h1>
+            <img className="patricio"  src={estrellaa} alt="Img Employe"></img>
+
+        </div>
         }
         return(
             <>
@@ -140,8 +146,8 @@ render()
                  <h1>{employe.name}</h1>
                  <img className="imgProfile" src={employe.imgSrc} alt="Img Employee" />
                  <h5>Job: {employe.job}</h5>
-                 <h5>Work Area: {employe.area}</h5>
-                 <h5>Points:{employe.points}</h5>
+                 <h5>Work Area: {employe.area}</h5>               
+                 <div className="Points"><h3 className="numberE"> {employe.points}</h3></div>
                  <button className="btn-Delete" onClick={()=>this.deleteEmploye(employe.id)} >Delete</button>
                  <button className="btn-Change" onClick={(e)=>this.mostrar(e)}>Change</button>
                  </div>

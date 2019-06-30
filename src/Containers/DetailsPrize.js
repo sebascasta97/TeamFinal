@@ -3,6 +3,7 @@ import {BASE_LOCAL_ENDPOINT} from '../constants';
 import axios from 'axios';
 import estrella from '../img/estrella.png';
 //import {Link,Redirect} from 'react-router-dom';
+import estrellaa from '../img/patric.png';
 
 
 class DetailsPrize extends Component
@@ -87,7 +88,11 @@ class DetailsPrize extends Component
         console.log(prize);
         if(error!=="")
         {
-            return <div  className="containError">No se pudo conectar con el servidor: {error}</div>
+            return <div className="nNetwork">
+            <h1>No se pudo conectar con el servidor...  {error}</h1>
+            <img className="patricio"  src={estrellaa} alt="Img Employe"></img>
+
+        </div>
         }
         return(
             <>
@@ -97,8 +102,7 @@ class DetailsPrize extends Component
                 <p>Description: {""+prize.description}</p>
                
                 <div className="ContainerPoints">
-                    <h5>{prize.points}</h5>  
-                    <h5>Points: </h5> 
+                <div className="Points"><h3 className="numberE"> {prize.points}</h3></div> 
                 </div>
                 
 

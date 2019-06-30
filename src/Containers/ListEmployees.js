@@ -4,6 +4,8 @@ import Employee from '../components/employee';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import { Button } from 'reactstrap';
+import team from '../img/logoHover.png';
+import estrella from '../img/patric.png';
 
 
 class ListEmployees extends Component
@@ -100,7 +102,11 @@ class ListEmployees extends Component
     console.log(content);
     const filteredEmployee =(content!==undefined)?content.filter(Employee => Employee.name.includes(filterEmployee)):"";
     if (error!=="" || filteredEmployee==="") {
-        return <div>No se pudo conectar con el servidor: {error}</div>
+        return <div className="nNetwork">
+        <h1>No se pudo conectar con el servidor... {error}</h1>
+        <img className="patricio"  src={estrella} alt="Img Employe"></img>
+        
+        </div>
     }
     else
     {
@@ -114,7 +120,9 @@ class ListEmployees extends Component
 
                   
              
-             <form className="FormCreate ocultar" onSubmit={(e)=>this.PostEmploye(e)}>
+             <form className="FormCreate ocultar  crearEmployee" onSubmit={(e)=>this.PostEmploye(e)}>
+                <img  src={team} alt="Img Employe"></img>
+                <h5>CREATE A NEW EMPLOYEE</h5>
                 <input className="campos" type="text" placeholder="Name"></input>
                 <input className="campos" type="text" placeholder="Job"></input>
                 <input className="campos" type="text" placeholder="Work Area"></input>

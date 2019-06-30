@@ -4,6 +4,8 @@ import Prize from '../components/Prize';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import { Button } from 'reactstrap';
+import team from '../img/logoHover.png';
+import estrella from '../img/patric.png';
 
 
 class ListPrizes extends Component
@@ -102,7 +104,11 @@ class ListPrizes extends Component
     
 
     if (error!=="") {
-        return <div>No se pudo conectar con el servidor, por favor intentelo nuevamente: {error}</div>
+        return <div className="nNetwork">
+            <h1>No se pudo conectar con el servidor...  {error}</h1>
+            <img className="patricio"  src={estrella} alt="Img Employe"></img>
+
+        </div>
     }
 
     else
@@ -120,6 +126,8 @@ class ListPrizes extends Component
              
              
                 <form className="FormCreate ocultar"  onSubmit={(e)=>this.PostPrize(e)}>
+                        <img  src={team} alt="Img Employe"></img>
+                        <h5>CREATE A NEW PRIZE</h5>
                         <input className="campos" type="text"  placeholder="name"/>
                         <input className="campos" type="text" placeholder="Descripcion"/>
                         <input className="campos" type="number" placeholder="points"/>

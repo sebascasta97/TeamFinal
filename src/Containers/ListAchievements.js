@@ -3,6 +3,8 @@ import { BASE_LOCAL_ENDPOINT } from '../constants';
 import Achievement from '../components/Achievements';
 import axios from 'axios';
 import { Button } from 'reactstrap';
+import team from '../img/logoHover.png';
+import estrella from '../img/patric.png';
 //import {Link} from 'react-router-dom';
 
 class ListAchievement extends Component
@@ -118,7 +120,13 @@ class ListAchievement extends Component
 
     if (error!=="") {
         
-        return <div>No se pudo conectar con el servidor: {error}</div>
+        return <div className="nNetwork">
+            <h1>No se pudo conectar con el servidor... {error}</h1>
+            <img className="patricio"  src={estrella} alt="Img Employe"></img>
+            
+
+        
+        </div>
     }
 
     return (
@@ -128,25 +136,30 @@ class ListAchievement extends Component
             <Button className="btnCrear2" color="danger" onClick={()=>this.mostrarCreate()}>Create{this.props.buttonLabel}</Button>
               
               <form className="FormCreate ocultar"  onSubmit={(e)=>this.PostAchievements(e)}>
+                    <img  src={team} alt="Img Employe"></img>
+                    <h5>CREATE A NEW ACHIEVEMENT</h5>
                     <input className="campos" placeholder="Name"></input>
                     <input className="campos" placeholder="Points"></input>
                     <button className="btn-Change CentrarBtn" type="submit">Create</button>
               </form> 
                
-                <div className="containerEmployees"> 
+                <div className="containerAchievements"> 
                 {console.log(error)}        
                     {filterAchievements.map(({ id,name,points }) => (
                         <div  key={id}>   
-                            <Achievement name={name} points={points}/>  
-                            <button  onClick={()=>this.deleteAchievement(id)}>Delete</button>
-                            <button  onClick={()=>this.mostrar(id)}>Change</button>
+                            <Achievement name={name} points={points}/>
+                            <div className="achievementButtons">  
+                            <button className="btnA"  onClick={()=>this.deleteAchievement(id)}>Delete</button>
+                            <button className="btnA"   onClick={()=>this.mostrar(id)}>Change</button>
+                            </div>
                             
                             <form  className={`FormDetail${id} ocultar `} onSubmit={(e)=>this.changeAchievement(e,id)}>
+
                                 <label className="LabelFormAchivements">Name:</label>
                                 <input className="InputFormAchivements" placeholder="Name" defaultValue={name}></input>
                                 <label className="LabelFormAchivements">Points:</label>
                                 <input className="InputFormAchivements" placeholder="Points" defaultValue={points}></input>
-                                <button className="btn-Change btn" type="submit">Change</button>
+                                <button className="btn-Change btn " id="btn-Change3" type="submit">Change</button>
                             </form>  
                             
                             
