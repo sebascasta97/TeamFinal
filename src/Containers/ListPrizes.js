@@ -3,7 +3,7 @@ import { BASE_LOCAL_ENDPOINT } from '../constants';
 import Prize from '../components/Prize';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 
 class ListPrizes extends Component
@@ -84,6 +84,11 @@ class ListPrizes extends Component
         })
     })
    }
+   mostrarCreate()
+    {
+        document.getElementsByClassName("FormCreate")[0].className="FormCreate animated  fadeInDown";
+        
+    }
 
    render() { 
     const {
@@ -111,19 +116,17 @@ class ListPrizes extends Component
 
 
             <div >
-             <Button className="btnCrear2" color="danger" onClick={this.toggle}>Add{this.props.buttonLabel}</Button>
-             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} className="crearEmployee animated bounce" >
-              <ModalHeader toggle={this.toggle}>CREATE A NEW PRIZE </ModalHeader>
-              <ModalBody>
-                <form  onSubmit={(e)=>this.PostPrize(e)}>
+             <Button className="btnCrear2" color="danger" onClick={()=>this.mostrarCreate()}>Add{this.props.buttonLabel}</Button>
+             
+             
+                <form className="FormCreate ocultar"  onSubmit={(e)=>this.PostPrize(e)}>
                         <input className="campos" type="text"  placeholder="name"/>
                         <input className="campos" type="text" placeholder="Descripcion"/>
                         <input className="campos" type="number" placeholder="points"/>
                         <input className="campos" type="text"  placeholder="url-img"/>
-                        <button className="btnCrear"  type="submit">Add</button>  
+                        <button className="btn-Change CentrarBtn"  type="submit">Add</button>  
                 </form>  
-              </ModalBody>
-             </Modal>
+              
            </div>
 
            <div className="containerEmployees">

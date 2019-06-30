@@ -2,7 +2,7 @@ import React,{ Component} from 'react';
 import { BASE_LOCAL_ENDPOINT } from '../constants';
 import Achievement from '../components/Achievements';
 import axios from 'axios';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button } from 'reactstrap';
 //import {Link} from 'react-router-dom';
 
 class ListAchievement extends Component
@@ -104,6 +104,11 @@ class ListAchievement extends Component
         
         document.getElementsByClassName("FormDetail"+id)[0].className="FormDetail animated  fadeInDown";
     }
+    mostrarCreate()
+    {
+        document.getElementsByClassName("FormCreate")[0].className="FormCreate animated  fadeInDown";
+        
+    }
    render() { 
     const {
         achievements: { content, error },
@@ -120,25 +125,13 @@ class ListAchievement extends Component
     <>
 
             <input  className="buscarAchievement" name="SearchAchievement" placeholder="Search Achievement" onChange={(e) => this.searchAchievement(e)}/>
-            <Button className="btnCrear2" color="danger" onClick={this.toggle}>Create{this.props.buttonLabel}</Button>
-             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} className="crearEmployee animated bounce" >
-              <ModalHeader toggle={this.toggle}>CREATE A NEW ACHIEVEMENT </ModalHeader>
-              <ModalBody>
-
-
-                  
-             
-              <form  onSubmit={(e)=>this.PostAchievements(e)}>
+            <Button className="btnCrear2" color="danger" onClick={()=>this.mostrarCreate()}>Create{this.props.buttonLabel}</Button>
+              
+              <form className="FormCreate ocultar"  onSubmit={(e)=>this.PostAchievements(e)}>
                     <input className="campos" placeholder="Name"></input>
                     <input className="campos" placeholder="Points"></input>
-                    <button className="btnCrear" type="submit">Create</button>
+                    <button className="btn-Change CentrarBtn" type="submit">Create</button>
               </form> 
-
-             </ModalBody>
-            </Modal>
-
- 
-
                
                 <div className="containerEmployees"> 
                 {console.log(error)}        

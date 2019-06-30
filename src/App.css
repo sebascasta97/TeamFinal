@@ -298,12 +298,15 @@ position: fixed;
 
 /*form*/
 
-
+.FormCreate
+{
+  margin:10px 0px;
+}
 .campos{
   width: 80%;
   padding: 12px;
-  margin-left: 19px;
-  margin-right: 19px;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-bottom: 10px;
   border: 0px solid #253746;
   border-radius: 22px;
@@ -484,6 +487,11 @@ padding: 40px;
   
 }
 
+.CentrarBtn
+{
+  margin: 2% 43%;
+  padding: 8px 5%;
+}
 
 .imgProfile
 {

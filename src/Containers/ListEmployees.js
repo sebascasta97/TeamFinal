@@ -3,7 +3,7 @@ import { BASE_LOCAL_ENDPOINT } from '../constants';
 import Employee from '../components/employee';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 
 class ListEmployees extends Component
@@ -86,6 +86,11 @@ class ListEmployees extends Component
         })
     })
    }
+   mostrar()
+    {
+        
+        document.getElementsByClassName("FormCreate")[0].className="FormCreate animated  fadeInDown";
+    }
 
    render() { 
     const {
@@ -103,26 +108,23 @@ class ListEmployees extends Component
             <>
             <input className="buscarEmpleado" name="txtSearchEmployee" placeholder="Buscar Empleado" onChange={(e) => this.searchEmploye(e)}/>
             <div >
-             <Button className="btnCrear2" color="danger" onClick={this.toggle}>Create{this.props.buttonLabel}</Button>
-             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} className="crearEmployee animated bounce" >
-              <ModalHeader toggle={this.toggle}>CREATE A NEW EPLOYEE </ModalHeader>
-              <ModalBody>
+             <Button className="btnCrear2" color="danger"  onClick={()=>this.mostrar()}>Create{}</Button>
+             
 
 
                   
              
-             <form  onSubmit={(e)=>this.PostEmploye(e)}>
+             <form className="FormCreate ocultar" onSubmit={(e)=>this.PostEmploye(e)}>
                 <input className="campos" type="text" placeholder="Name"></input>
                 <input className="campos" type="text" placeholder="Job"></input>
                 <input className="campos" type="text" placeholder="Work Area"></input>
                 <input className="campos" type="text" placeholder="Url-image"></input>
                 <input className="campos" type="number" placeholder="Points"></input>
-                <button className="btnCrear" type="submit">Create</button>
+                <button className="btn-Change CentrarBtn" type="submit">Create</button>
                 
             </form>  
 
-          </ModalBody>
-        </Modal>
+          
       </div>
             
   
