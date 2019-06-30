@@ -104,7 +104,7 @@ class ListAchievement extends Component
     mostrar(id)
     {
         
-        document.getElementsByClassName("FormDetail"+id)[0].className="FormDetail animated  fadeInDown";
+        document.getElementsByClassName("FormAchievements"+id)[0].className="FormAchievements animated  fadeInDown";
     }
     mostrarCreate()
     {
@@ -153,13 +153,13 @@ class ListAchievement extends Component
                             <button className="btnA"   onClick={()=>this.mostrar(id)}>Change</button>
                             </div>
                             
-                            <form  className={`FormDetail${id} ocultar `} onSubmit={(e)=>this.changeAchievement(e,id)}>
+                            <form  className={`FormAchievements${id} ocultar `} onSubmit={(e)=>this.changeAchievement(e,id)}>
 
                                 <label className="LabelFormAchivements">Name:</label>
                                 <input className="InputFormAchivements" placeholder="Name" defaultValue={name}></input>
                                 <label className="LabelFormAchivements">Points:</label>
                                 <input className="InputFormAchivements" placeholder="Points" defaultValue={points}></input>
-                                <button className="btn-Change btn " id="btn-Change3" type="submit">Change</button>
+                                <button className="btn-Change btn correccionBtn" id="btn-Change3" type="submit">Change</button>
                             </form>  
                             
                             

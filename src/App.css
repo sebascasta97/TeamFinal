@@ -73,7 +73,7 @@
   position: relative;
   height:50px;
   width:60px;
-  background: url(img/logo.png) no-repeat;
+  background: url(img/Logo.png) no-repeat;
 
 }
 .color-purple
@@ -557,14 +557,20 @@ text-align: center;
   left: 13px;
 }
 
+.FormAchievements
+{
+    max-width: 69% !important;
+    margin-top: -45px !important;
+    margin-left: 14% !important;
+}
 .LabelFormAchivements
 {
   margin:5px 0px;
   display: inline-block;
   max-width: 15%;
   min-width: 15%;
-  padding-right: 10%;
-  margin-left: 5%;
+  margin-right: 5%;
+  margin-left: 0%;
 }
 
 .InputFormAchivements
@@ -577,8 +583,16 @@ text-align: center;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  
+  padding-right: 59%;
+  margin-left: 5%;
 }
+
+.correccionBtn
+{
+  display: block;
+  margin: 20px auto;
+}
+
 
 .flip-card-Achievement
 {
